@@ -52,7 +52,7 @@ const Home = () => {
     //store individual wishlist from wishlists
     if (wishlists && wishlists.length > 0 && wishlists[0].uuid) {
       axios
-        .get(`${import.meta.env.VITE_APP_API_URL}2/lists/${wishlists[0].uuid}`, {
+        .get(`${import.meta.env.VITE_APP_API_URL}/lists/${wishlists[0].uuid}`, {
           headers: { Authorization: `Bearer ${userToken.token}` },
         })
         .then((response) => {
