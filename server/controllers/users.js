@@ -46,9 +46,11 @@ async function login(req, res) {
 }
 
 async function loggedIn(req, res) {
+  const cookies = req.cookies;
   const username = req.cookies.username;
   const loggedInStatus = req.cookies.username ? true : false;
   return res.json({
+    cookies,
     username,
     loggedInStatus,
     message: loggedInStatus ? "Logged in successfully!" : null,
